@@ -1,0 +1,57 @@
+html, body{
+  height: 100%;    
+  margin: 0; 
+  background-color:var(--gray-800); 
+  font-family: "Quicksand", sans-serif;     
+}
+
+body, #inputs{
+  display: flex;              
+  justify-content: center;    
+  align-items: center;     
+  gap: 1rem;  
+}
+
+input::placeholder{
+    text-align: center;
+    color: var(--blue-300)
+}
+
+p, label{
+  color: var(--gray-100);
+}
+
+.text_right{
+  width: 35rem;
+  position: absolute;
+  font-size: var(--font-xl);
+  font-weight: 500;
+  left: 9rem;
+  top: 23rem;
+}
+
+#ficha_nav{
+  position: absolute;
+  top: 10rem;
+}
+
+.race_name{
+  width: 30rem;
+  height: auto;
+  min-height: 20rem;
+  position: absolute; 
+  right: 9rem;
+  top: 15rem;
+  background-color: rgb(41, 41, 41);
+  display: flex;
+  justify-content: top;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+#race_name{
+  width: 6rem;
+  height: 2rem;
+}

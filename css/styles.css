@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap'); 
+
+
+:root {
+  /* --------- CORES --------- */
+
+  /* Vermelhos */
+  --red-50:  #ffe5e5;
+  --red-100: #fbb6b6;
+  --red-200: #f07b7b;
+  --red-300: #e64040;
+  --red-400: #cc1a1a;
+  --red-500: #b30000;
+  --red-700: #640505;
+
+  /* Azuis */
+  --blue-50:  #e6f0ff;
+  --blue-100: #b3ccff;
+  --blue-200: #80a8ff;
+  --blue-300: #4d84ff;
+  --blue-400: #265eff;
+  --blue-450: #264cc7;
+  --blue-500: #0036e6;
+
+  /* Verdes */
+  --green-50:  #e6f7e6;
+  --green-100: #b3dcae;
+  --green-200: #80c276;
+  --green-300: #4da73e;
+  --green-400: #267823;
+  --green-500: #005a00;
+
+  /* Amarelos */
+  --yellow-50:  #fff9e6;
+  --yellow-100: #fff2b3;
+  --yellow-200: #ffeb80;
+  --yellow-300: #ffe34d;
+  --yellow-400: #ffdb26;
+  --yellow-500: #ffce00;
+
+  /* Roxos */
+  --purple-dark-500: #220441;
+  --purple-dark-400: #300f50;
+  --purple-dark-300: #4f2679;
+  --purple-dark-200: #714a97;
+  --purple-dark-100: #9b76c0;
+  --purple-50:  #f2e6ff;
+  --purple-75:  #e2cbfa;
+  --purple-100: #c69fee;
+  --purple-200: #b57af0;
+  --purple-300: #a64dff;
+  --purple-400: #8426e9;
+  --purple-500: #8806e6;
+
+  /* Cinzas */
+  --gray-50:  #f9f9f9;
+  --gray-100: #e1e1e1;
+  --gray-200: #c2c2c2;
+  --gray-300: #a3a3a3;
+  --gray-400: #757575;
+  --gray-500: #4d4d4d;
+  --gray-600: #2e2e2e;
+  --gray-700: #222222;
+  --gray-750: #161616;
+  --gray-800: #111111;
+  --gray-900: #0e0e0e;
+
+  /* Preto e branco */
+  --black: #000000;
+  --white: #ffffff;
+
+  /* --------- TAMANHOS --------- */
+
+  /* Fontes */
+  --font-xs: 0.75rem;   /* 12px */
+  --font-sm: 0.875rem;  /* 14px */
+  --font-md: 1rem;      /* 16px */
+  --font-lg: 1.125rem;  /* 18px */
+  --font-lgg: 1.25rem;  /* 20px */
+  --font-xl: 1.5rem;    /* 24px */
+  --font-xxl: 1.75rem;    /* 28px */
+  --font-xxxl: 2rem;    /* 32px */
+  --font-xxxxl: 2.5rem;    /* 40px */
+
+  /* Espaçamentos */
+  --space-xs: 0.25rem;  /* 4px */
+  --space-sm: 0.5rem;   /* 8px */
+  --space-md: 1rem;     /* 16px */
+  --space-lg: 1.5rem;   /* 24px */
+  --space-xl: 2rem;     /* 32px */
+
+  /* Bordas */
+  --border-radius-sm: 0.125rem; 
+  --border-radius-md: 0.25rem;  
+  --border-radius-lg: 0.5rem; 
+  --border-radius-xl: 1rem;
+
+  --border-width-thin: 1px;
+  --border-width-thick: 3px;
+
+  /* --------- CLIP PATHS --------- */
+
+  /* Formas básicas */
+  --clip-circle: circle(50% at 50% 50%);
+  --clip-ellipse: ellipse(50% 40% at 50% 50%);
+  --clip-triangle-up: polygon(50% 0%, 0% 100%, 100% 100%);
+  --clip-triangle-down: polygon(0 0, 100% 0, 50% 100%);
+  --clip-pentagon: polygon(50% 0%, 90% 35%, 75% 90%, 25% 90%, 10% 35%);
+  --clip-hexagon: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  /* --------- OUTROS --------- */
+
+  /* Sombras */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.15);
+
+  /* Transições */
+  --transition-fast: 0.2s ease-in-out;
+  --transition-medium: 0.4s ease-in-out;
+  --transition-slow: 0.7s ease-in-out;
+
+
+}
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing:content-box;
+}
+
+a{
+    text-decoration: none;
+}
+
+.horizontal{
+    display: flex;
+    flex-direction: row
+}
+.vertical{
+    display: flex;
+    flex-direction: column
+}
+.hidden{
+    display: none;
+}
+
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+

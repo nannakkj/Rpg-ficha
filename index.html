@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/home.css">
+</head>
+<body>
+
+    <nav id="ficha_nav">
+        <button class="nav-link" data-index="0">Nome</button>
+        <button class="nav-link" data-index="1"></button>
+        <button class="nav-link" data-index="2"></button>
+        <button class="nav-link" data-index="3"></button>
+        <button class="nav-link" data-index="4"></button>
+        <button class="nav-link" data-index="5"></button>
+        <button class="nav-link" data-index="6"></button>
+        <button class="nav-link" data-index="7"></button>
+        <button class="nav-link" data-index="8"></button>
+        <button class="nav-link" data-index="9"></button>
+        <button class="nav-link" data-index="10"></button>
+    </nav>
+
+    <article class="vertical"id="inputs">
+        <article class="page" id="name">
+            <p class="text_right quicksand">
+                O seu nome pode ser decidido tanto agora quanto no final da ficha, pedimos apenas que tenha nome e sobrenome. <br><br>
+                Veja alguns nomes comuns para cada raça ao lado, lembrando que não é necessario escolher algum deles, são apenas sugestões.
+            </p>
+            <input class="input" id="name" type="text" placeholder="name">
+            <div class="race_name">
+                <label for="race_name">Raça</label>
+                <select name="race_name" id="race_name">
+                    <option value="none">Escolha</option>
+                    <option value="humanos">Humanos</option>
+                    <option value="nortanos">Nortanos</option>
+                    <option value="flutterianos">Flutterianos</option>
+                    <option value="klumma">Klumma</option>
+                    <option value="nari">Nari</option>
+                    <option value="celestes">Celestes</option>
+                    <option value="demonios">Demônios</option>
+                </select>
+                <div><p id="race_name_text"> Escolha uma raça para ver mais informações.</p></div>
+            </div>
+        </article>  
+
+
+        <article class="page vertical" id="atributes">
+            <label for="strong">Força</label>
+            <input class="input" id="strong" type="number" placeholder="Força" value="1">
+            <label for="spd">Agilidade</label>
+            <input class="input" id="spd" type="number" placeholder="Agilidade" value="1">
+            <label for="const">Constituição</label>
+            <input class="input" id="const" type="number" placeholder="Constituição" value="1">
+            <label for="mind">Mente</label>
+            <input class="input" id="mind" type="number" placeholder="Mente" value="1">
+            <label for="int">Inteligência</label>
+            <input class="input" id="int" type="number" placeholder="Inteligência" value="1">
+        </article>
+        <article class="page" id="age">
+            <input class="input" id="age" type="number" placeholder="age" >
+        </article>
+        <article class="page" id="race">
+            <label for="race">race:</label>
+            <select class="input" name="race" id="race">
+                <option value="human">human</option>
+                <option value="nortano">nortano</option>
+                <option value="sexo">sexo</option>
+            </select>
+        </article>
+        <article class="page" id="job">
+            <label for="job">job:</label>
+            <select class="input" name="job" id="job">
+                <option value="puta">puta</option>
+                <option value="fazendeiro">fazendeiro</option>
+                <option value="cabra">cabra</option>
+            </select>
+        </article>
+        <div>
+            <button class="btn" onclick="clearAll()">Clear All</button>
+            <button class="btn" id="finish" onclick="finish()">finish</button>
+        </div>
+    </article>
+
+    <article class="hidden" id="ficha">
+        <div class="horizontal">
+            <h4>Name:&nbsp;</h4>
+            <p id="name_ficha"></p>
+        </div>
+        <div class="horizontal">
+            <h4>Age:&nbsp;</h4>
+            <p id="age_ficha"></p>
+        </div>
+        <div class="horizontal">
+            <h4>Race:&nbsp;</h4>
+            <p id="race_ficha"></p>
+        </div>
+        <div class="horizontal">
+            <h4>Job:&nbsp;</h4>
+            <p id="job_ficha"></p>
+        </div>
+    </article>
+
+    <script src="/Js/script.js"></script>
+</body>
+</html>
