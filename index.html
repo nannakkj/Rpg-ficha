@@ -10,17 +10,17 @@
 <body>
 
     <nav id="ficha_nav">
-        <button class="nav-link" data-index="0">Nome</button>
-        <button class="nav-link" data-index="1"></button>
-        <button class="nav-link" data-index="2"></button>
-        <button class="nav-link" data-index="3"></button>
-        <button class="nav-link" data-index="4"></button>
-        <button class="nav-link" data-index="5"></button>
-        <button class="nav-link" data-index="6"></button>
-        <button class="nav-link" data-index="7"></button>
-        <button class="nav-link" data-index="8"></button>
-        <button class="nav-link" data-index="9"></button>
-        <button class="nav-link" data-index="10"></button>
+        <button class="nav-link active" data-index="0">Nome</button>
+        <button class="nav-link" data-index="1">Idade</button>
+        <button class="nav-link" data-index="2">Nome</button>
+        <button class="nav-link" data-index="3">Nome</button>
+        <button class="nav-link" data-index="4">Nome</button>
+        <button class="nav-link" data-index="5">Nome</button>
+        <button class="nav-link" data-index="6">Nome</button>
+        <button class="nav-link" data-index="7">Nome</button>
+        <button class="nav-link" data-index="8">Nome</button>
+        <button class="nav-link" data-index="9">Nome</button>
+        <button class="nav-link" data-index="10">Nome</button>
     </nav>
 
     <article class="vertical"id="inputs">
@@ -29,10 +29,10 @@
                 O seu nome pode ser decidido tanto agora quanto no final da ficha, pedimos apenas que tenha nome e sobrenome. <br><br>
                 Veja alguns nomes comuns para cada raça ao lado, lembrando que não é necessario escolher algum deles, são apenas sugestões.
             </p>
-            <input class="input" id="name" type="text" placeholder="name">
+            <input class="input" id="name" type="text" placeholder="Nome">
             <div class="race_name">
-                <label for="race_name">Raça</label>
-                <select name="race_name" id="race_name">
+                <label for="race_name" style="font-size: var(--font-xxl); font-weight: 600;">Raça</label>
+                <select name="race_name" id="race_name" style="font-size: var(--font-lg);">
                     <option value="none">Escolha</option>
                     <option value="humanos">Humanos</option>
                     <option value="nortanos">Nortanos</option>
@@ -45,7 +45,27 @@
                 <div><p id="race_name_text"> Escolha uma raça para ver mais informações.</p></div>
             </div>
         </article>  
-
+        <article class="page" id="age">
+            <p class="text_right quicksand">
+                A divisão de fases da vida pode variar muito de acordo com cada raça, então escolha sabiamente.<br><br>
+                Veja as fases de acordo com a raça.
+            </p>
+            <input class="input number_inp" id="age" type="text" placeholder="Idade" >
+            <div class="race_age">
+                <label for="race_age" style="font-size: var(--font-xxl); font-weight: 600;">Raça</label>
+                <select name="race_age" id="race_age" style="font-size: var(--font-lg);">
+                    <option value="none">Escolha</option>
+                    <option value="humanos">Humanos</option>
+                    <option value="nortanos">Nortanos</option>
+                    <option value="flutterianos">Flutterianos</option>
+                    <option value="klumma">Klumma</option>
+                    <option value="nari">Nari</option>
+                    <option value="celestes">Celestes</option>
+                    <option value="demonios">Demônios</option>
+                </select>
+                <div><p id="race_age_text"> Escolha uma raça para ver mais informações.</p></div>
+            </div>
+        </article>
 
         <article class="page vertical" id="atributes">
             <label for="strong">Força</label>
@@ -59,9 +79,7 @@
             <label for="int">Inteligência</label>
             <input class="input" id="int" type="number" placeholder="Inteligência" value="1">
         </article>
-        <article class="page" id="age">
-            <input class="input" id="age" type="number" placeholder="age" >
-        </article>
+
         <article class="page" id="race">
             <label for="race">race:</label>
             <select class="input" name="race" id="race">

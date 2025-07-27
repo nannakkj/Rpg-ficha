@@ -16,6 +16,8 @@ function ArticleAtt(){
 
 navs.forEach(link => {
     link.addEventListener("click", ()=> {
+        navs.forEach((el) => el.classList.remove('active'))
+        link.classList.add('active')
         const i = parseInt(link.dataset.index);
         if (i != atual_page){
             atual_page = i;
@@ -62,20 +64,30 @@ function finish(){
     job_ficha.innerHTML = job
 }
 
-function Roll(max, botao){
+function Dice(max, botao){
     let ramdom = Math.floor(Math.random() * (max - 1 + 1)) + 1;
-
     botao.innerHTML = `Result: ${ramdom}`
 }
+
+inputs.forEach((inp) =>{
+    inp.addEventListener("input", () => {
+        if (inp.classList.contains("number_inp")){
+            inp.value = inp.value.replace(/[^0-9]/gi, "")
+        }
+    })
+})
 
 
 
 // race text
 
-const race_text = document.getElementById('race_name_text')
-const race_sel = document.getElementById('race_name')
+const race_name_text = document.getElementById('race_name_text')
+const race_name_sel = document.getElementById('race_name')
+const race_age_text = document.getElementById('race_age_text')
+const race_age_sel = document.getElementById('race_age')
 
-const race_desc = {
+
+const race_name_desc = {
     none: `
     Escolha uma raça para ver mais informações.`,
     humanos: `
@@ -163,8 +175,96 @@ const race_desc = {
     Kaelth Hellfire, Lilith do Fogo Infernal, Zarek Varkel, Zyra Ashbane, Malgor do Vulcão Sangrento, Morrin Darkflame, Draven Emberfall, Vexa da Chama Negra.
 `
 };
+const race_age_desc = {
+    none: `
+    Escolha uma raça para ver mais informações.`,
+    humanos: `
+    <strong>Faixas etárias:</strong><br><br>
+    <em>Infância:</em> Criança jovem (4 a 8 anos).<br><br>
+    <em>Pré-adolescente:</em> (9 a 13 anos).<br><br>
+    <em>Adolescência:</em> Adolescente (14 a 18 anos).<br><br>
+    <em>Jovem adulto:</em> (19 a 26 anos).<br><br>
+    <em>Vida adulta:</em> Adulto (27 a 45 anos).<br><br>
+    <em>Velhice:</em> Idoso (46 a 65 anos).<br><br>
+    <em>Ancião:</em> (66 a 85 anos).<br><br>
+    <em>Velhice Extrema:</em> (86 a 109 anos).
+    `,
+    nortanos: `
+    <strong>Faixas etárias:</strong><br><br>
+    <em>Infância:</em> Criança jovem (3 a 6 anos).<br><br>
+    <em>Pré-adolescente:</em> (7 a 11 anos).<br><br>
+    <em>Adolescência:</em> Adolescente (12 a 15 anos).<br><br>
+    <em>Jovem adulto:</em> (16 a 21 anos).<br><br>
+    <em>Vida adulta:</em> Adulto (22 a 88 anos).<br><br>
+    <em>Velhice:</em> Idoso (89 a 132 anos).<br><br>
+    <em>Ancião:</em> (133 a 211 anos).<br><br>
+    <em>Velhice Extrema:</em> (212 a 246 anos).
 
-race_sel.addEventListener('change', () => {
-    const valor = race_sel.value;
-    race_text.innerHTML = race_desc[valor]
+ `,
+    flutterianos: `
+    <strong>Faixas etárias:</strong><br><br>
+    <em>Infância:</em> Criança jovem (3 a 6 anos).<br><br>
+    <em>Pré-adolescente:</em> (7 a 11 anos).<br><br>
+    <em>Adolescência:</em> Adolescente (12 a 15 anos).<br><br>
+    <em>Jovem adulto:</em> (16 a 21 anos).<br><br>
+    <em>Vida adulta:</em> Adulto (22 a 88 anos).<br><br>
+    <em>Velhice:</em> Idoso (89 a 132 anos).<br><br>
+    <em>Ancião:</em> (133 a 211 anos).<br><br>
+    <em>Velhice Extrema:</em> (212 a 328 anos).
+
+`,
+    klumma: `
+    <strong>Faixas etárias:</strong><br><br>
+    <em>Infância:</em> Criança jovem (6 a 9 anos).<br><br>
+    <em>Pré-adolescente:</em> (10 a 16 anos).<br><br>
+    <em>Adolescência:</em> Adolescente (17 a 21 anos).<br><br>
+    <em>Jovem adulto:</em> (22 a 28 anos).<br><br>
+    <em>Vida adulta:</em> Adulto (29 a 36 anos).<br><br>
+    <em>Velhice:</em> Idoso (37 a 48 anos).<br><br>
+    <em>Ancião:</em> (49 a 60 anos).<br><br>
+    <em>Velhice Extrema:</em> (61 a 88 anos).
+`,
+    nari: `
+    <strong>Faixas etárias:</strong><br><br>
+    <em>Infância:</em> Criança jovem (2 a 5 anos).<br><br>
+    <em>Pré-adolescente:</em> (6 a 9 anos).<br><br>
+    <em>Adolescência:</em> Adolescente (10 a 14 anos).<br><br>
+    <em>Jovem adulto:</em> (15 a 19 anos).<br><br>
+    <em>Vida adulta:</em> Adulto (20 a 27 anos).<br><br>
+    <em>Velhice:</em> Idoso (28 a 32 anos).<br><br>
+    <em>Ancião:</em> (33 a 38 anos).<br><br>
+    <em>Velhice Extrema:</em> (39 a 50 anos).
+`,
+    celestes: `
+    <strong>Faixas etárias:</strong><br><br>
+    <em>Infância:</em> Criança jovem (4 a 8 anos).<br><br>
+    <em>Pré-adolescente:</em> (9 a 13 anos).<br><br>
+    <em>Adolescência:</em> Adolescente (14 a 18 anos).<br><br>
+    <em>Jovem adulto:</em> (19 a 26 anos).<br><br>
+    <em>Vida adulta:</em> Adulto (27 a 45 anos).<br><br>
+    <em>Velhice:</em> Idoso (46 a 65 anos).<br><br>
+    <em>Ancião:</em> (66 a 85 anos).<br><br>
+    <em>Velhice Extrema:</em> (86 a 109 anos).
+`,
+    demonios: `
+    <strong>Faixas etárias:</strong><br><br>
+    <em>Infância:</em> Criança jovem (5 a 9 anos).<br><br>
+    <em>Pré-adolescente:</em> (10 a 13 anos).<br><br>
+    <em>Adolescência:</em> Adolescente (14 a 19 anos).<br><br>
+    <em>Jovem adulto:</em> (20 a 35 anos).<br><br>
+    <em>Vida adulta:</em> Adulto (36 a 47 anos).<br><br>
+    <em>Velhice:</em> Idoso (48 a 65 anos).<br><br>
+    Eles param de envelhecer após isso.
+    `
+};
+
+race_name_sel.addEventListener('change', () => {
+    const valor = race_name_sel.value;
+    race_name_text.innerHTML = race_name_desc[valor]
 })
+
+race_age_sel.addEventListener('change', () => {
+    const valor = race_age_sel.value;
+    race_age_text.innerHTML = race_age_desc[valor]
+})
+
